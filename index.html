@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Study Buddy — Alexa+ Experience Prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-mark">✦</div>
+      <div>
+        <div class="brand">Study Buddy</div>
+        <div class="muted small">Alexa+ experience concept</div>
+      </div>
+      <div class="side-label">YOUR SPACE</div>
+      <button class="nav active" id="navToday">◷ <span>Today</span></button>
+      <button class="nav" id="navTasks">☷ <span>My tasks</span></button>
+      <div class="sidebar-note">
+        <div class="tiny-orb">✦</div>
+        <strong>A little progress<br>goes a long way.</strong>
+        <p>Plan small. Start now. Celebrate progress.</p>
+      </div>
+      <div class="profile">
+        <div class="avatar">SB</div>
+        <div><strong>Student</strong><div class="muted small">Personal workspace</div></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><div class="eyebrow">YOUR PERSONAL STUDY ASSISTANT</div><h1 id="pageTitle">Good day. Ready to focus?</h1></div>
+        <div class="status-pill"><span class="status-dot"></span> Prototype mode</div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="hero-kicker">✦ YOUR DAY, MADE SIMPLER</div>
+          <h2>One clear plan.<br><span>One step at a time.</span></h2>
+          <p>Tell Study Buddy what you need to get done. It can organise tasks, track progress, and help you choose your next step.</p>
+          <button class="primary" id="focusBtn">Help me focus <span>→</span></button>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="spark s1">✦</div><div class="spark s2">✧</div><div class="spark s3">✦</div>
+          <div class="assistant-orb"><div class="orb-shine"></div><div class="orb-core">✦</div></div>
+          <div class="floating-card"><span class="mini-check">✓</span><div><strong>Small steps count</strong><small>You're making progress</small></div></div>
+        </div>
+      </section>
+
+      <section class="stats">
+        <div class="stat-card"><div class="stat-icon lavender">☷</div><div><div class="stat-label">Tasks today</div><div class="stat-number" id="totalCount">3</div></div></div>
+        <div class="stat-card"><div class="stat-icon mint">✓</div><div><div class="stat-label">Completed</div><div class="stat-number" id="doneCount">1</div></div></div>
+        <div class="stat-card"><div class="stat-icon peach">◷</div><div><div class="stat-label">Focus target</div><div class="stat-number">60 <small>min</small></div></div></div>
+      </section>
+
+      <section class="workspace">
+        <div class="panel task-panel">
+          <div class="panel-heading"><div><div class="eyebrow">YOUR CHECKLIST</div><h3>Today's tasks</h3></div><button class="text-button" id="showAll">View all →</button></div>
+          <form id="taskForm" class="add-task"><input id="taskInput" maxlength="100" placeholder="Add a task, e.g. revise Python loops" aria-label="New task"><button type="submit" aria-label="Add task">+</button></form>
+          <div id="taskList" class="task-list"></div>
+          <div class="progress-area"><div class="progress-copy"><span>Daily progress</span><strong id="progressLabel">33%</strong></div><div class="progress-track"><div id="progressBar" class="progress-fill" style="width:33%"></div></div></div>
+        </div>
+
+        <div class="panel assistant-panel">
+          <div class="panel-heading"><div><div class="eyebrow">ASK STUDY BUDDY</div><h3>What can I help with?</h3></div><div class="assistant-icon">✦</div></div>
+          <div class="chat-window" id="chatWindow" aria-live="polite">
+            <div class="chat-message assistant-message"><span class="chat-avatar">✦</span><div><strong>Study Buddy</strong><p>Hi! Try “add revise chemistry”, “show my tasks”, or “help me focus”.</p></div></div>
+          </div>
+          <form id="chatForm" class="chat-form"><input id="chatInput" placeholder="Ask me to organise your day..." aria-label="Message Study Buddy"><button type="submit" aria-label="Send message">↑</button></form>
+          <div class="suggestions"><button data-prompt="Show my tasks">Show my tasks</button><button data-prompt="Help me focus">Help me focus</button><button data-prompt="Make a study plan">Study plan</button></div>
+          <div class="disclaimer">Demo note: responses are rule-based for this prototype; no live Alexa+ connection.</div>
+        </div>
+      </section>
+      <footer>Study Buddy · Student productivity concept · Built as a simulated Alexa+ experience</footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
